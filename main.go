@@ -2,25 +2,30 @@ package main
 
 import (
 	"fmt"
-	"strconv"
-
-	"rsc.io/quote"
+	"math"
 )
 
 func main() {
-	fmt.Println("Hello, world!")
-	fmt.Println(quote.Go())
+	var h, a, o float32
 
-	s := "ss"
-	integer, error := strconv.Atoi(s)
+	fmt.Print("Ingrese el valor del lado opuesto: ")
+	fmt.Scanln(&o)
 
-	if error != nil {
-		fmt.Println("Error: ", error)
-	}
+	fmt.Print("Ingrese el valor del lado adyacente: ")
+	fmt.Scanln(&a)
 
-	n := 42
-	s1 := strconv.Itoa(n)
+	fmt.Printf("o:%g  a:%g \n", o, a)
 
-	fmt.Printf("valor del entero es %d y el string es %s\n", integer, s1)
+	h = float32(math.Sqrt(math.Pow(float64(o), 2) + math.Pow(float64(a), 2)))
+
+	fmt.Println("Hipotenusa: ", h)
+
+	area_triangulo := (a * o) / 2
+
+	fmt.Printf("Area: %.2f\n", area_triangulo)
+
+	perimetro := (h + a + o)
+
+	fmt.Printf("Perimetro: %.2f\n", perimetro)
 
 }
