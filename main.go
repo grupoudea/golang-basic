@@ -2,30 +2,21 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"time"
 )
 
 func main() {
-	var h, a, o float32
+	t := time.Now()
+	hora := t.Hour()
 
-	fmt.Print("Ingrese el valor del lado opuesto: ")
-	fmt.Scanln(&o)
+	if hora < 12 {
+		fmt.Println("Mañana")
+	} else if hora < 17 {
+		fmt.Println("Tarde")
+	} else {
+		fmt.Println("Noche")
+	}
 
-	fmt.Print("Ingrese el valor del lado adyacente: ")
-	fmt.Scanln(&a)
-
-	fmt.Printf("o:%g  a:%g \n", o, a)
-
-	h = float32(math.Sqrt(math.Pow(float64(o), 2) + math.Pow(float64(a), 2)))
-
-	fmt.Println("Hipotenusa: ", h)
-
-	area_triangulo := (a * o) / 2
-
-	fmt.Printf("Area: %.2f\n", area_triangulo)
-
-	perimetro := (h + a + o)
-
-	fmt.Printf("Perimetro: %.2f\n", perimetro)
+	fmt.Println("Time: ", t)
 
 }
