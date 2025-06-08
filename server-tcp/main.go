@@ -34,5 +34,7 @@ func handleConnection(conn net.Conn) {
 		fmt.Println("Error al leer datos:", err)
 	}
 	fmt.Printf("Recibido: %s\n", string(buffer))
+
+	conn.Write([]byte("hola cliente"))
 	conn.Close()
 }

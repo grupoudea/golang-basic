@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-func main2() {
+func main() {
 	var h, a, o float32
 
 	fmt.Print("Ingrese el valor del lado opuesto: ")

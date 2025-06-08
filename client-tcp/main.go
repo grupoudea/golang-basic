@@ -21,4 +21,13 @@ func main() {
 		return
 	}
 	fmt.Printf("Enviado: %s\n", message)
+
+	//LEER DEL SERVER
+	buffer := make([]byte, 1024)
+	_, err2 := conn.Read(buffer)
+	if err2 != nil {
+		fmt.Println("Error al leer datos:", err)
+	}
+	fmt.Printf("Recibido: %s\n", string(buffer))
+
 }
