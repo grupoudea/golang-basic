@@ -5,7 +5,18 @@ import (
 	"math"
 )
 
+const PI = 3.14
+
+func swap(x, y string) (string, string) {
+	return y, x
+}
+
 func main() {
+	fmt.Println("Feliz día de", PI)
+
+	a1, b := swap("hola", "mundo")
+	fmt.Println(a1, b)
+
 	var h, a, o float32
 
 	fmt.Print("Ingrese el valor del lado opuesto: ")

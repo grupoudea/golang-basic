@@ -7,6 +7,12 @@ import (
 )
 
 func main() {
+	ti := time.Now()
+	for i := 0; i < 100; i++ {
+		fmt.Println("iteración %d", (i + 1))
+	}
+	tf := time.Now()
+	fmt.Println("Tiempo transcurrido: %.2f", tf.Sub(ti).Seconds())
 	t := time.Now()
 	hora := t.Hour()
 

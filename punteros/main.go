@@ -19,6 +19,18 @@ var (
 )
 
 func main() {
+
+	diccionario := map[string]Vertex{}
+
+	diccionario["1"] = Vertex{222, 22}
+	key := diccionario["1"]
+	fmt.Println("key %d value %d", key.X, key.Y)
+
+	for key, value := range diccionario {
+		fmt.Println("Printing...")
+		fmt.Println(key, value)
+	}
+
 	v := Vertex{1, 2}
 	p := &v
 	p.X = 4
